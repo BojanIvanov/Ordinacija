@@ -1,0 +1,69 @@
+body{
+    background-image: url(backinputs.png);
+    background-size: 100% 100dvh;
+    font-family: sans-serif;
+}
+.log{
+    position: absolute;
+    background-color: rgb(155, 167, 199);
+    top: 8%;
+    left: 34.7%;
+    width: 30.6%;
+    height: 84.6dvh;
+    padding: 3%;
+    border-radius: 10px;
+    box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.291);
+}
+.inputs{
+    height: 40dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+input{
+    height: 12dvh;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.14);
+    background-color: rgb(186, 186, 215); 
+    border-left: 5px solid rgb(70, 70, 115); 
+    border-right: 5px solid rgb(70, 70, 115); 
+    padding: 5%;
+    font-size: 2.2vw;
+}
+input::placeholder{
+    color: rgb(126, 161, 192);
+}
+input:focus{
+    outline: none;
+    background-color: rgb(117, 117, 151);
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.14);
+    color: rgb(49, 49, 80);
+}
+p{
+    font-size: 1.8vw;
+    margin-top: 10%;
+    color: rgb(98, 125, 149);
+}
+button{
+    display: flex;
+    justify-self: flex-end;
+    margin-bottom: 6dvh;
+    width: 32%;
+    height: 9dvh;
+    border: none;
+    border-radius: 10px;
+    padding: 4%;
+    padding-left: 4%;
+    font-size: 1.5vw;
+    font-weight: bold;
+    background-color: rgb(55, 55, 87);
+    color: rgb(219, 217, 237);
+}
+button:hover{
+    background-color: rgb(83, 83, 120);
+    border: 2px solid rgb(155, 167, 199);
+    outline: 3px solid rgb(58, 58, 91);
+    padding-left: 7%;
+    transition: 0.2s;
+}

@@ -1,0 +1,38 @@
+body{
+    background-color: rgb(68, 84, 141);
+}
+.slideshow{
+    position: absolute;
+    right: 0;
+    width: 96.5%;
+    height: 100dvh;
+    color: rgba(255, 255, 255, 0.823);
+    z-index: 1;
+    text-align: center;
+    background-image: url(backfacs.png);
+    background-size: 100% 100%;  
+    padding-top: 20dvh;
+}
+button{
+    height: 50dvh;
+    margin-top: 5dvh;
+}
+.div1{
+    height: 100%;
+}
+.facs{
+    width: 70%;
+    height: 60dvh;
+    margin: auto;
+    padding: 3%;
+    background-color: rgb(57, 70, 114);
+    border-radius: 15px;
+    box-shadow: inset 0 10px 20px -10px rgba(0, 0, 0, 0.405);
+}
+h1{
+    font-size: 3.2vw;
+}
+p{
+    font-size: 1.8vw;
+    padding: 5%;
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="recs.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <div class="nav" id="Nav">
+        <div class="top">
+          <div id="acc" class="Acc"></div> 
+            <i class="bi bi-arrow-left-square-fill slideicon" id="slideleft" onclick="Slide()"></i>
+            <i class="bi bi-arrow-right-square-fill slideicon" id="slideright" onclick="Slideback()"></i>
+            <div class="about">
+                <a href="HOME.html">Home Page</a>
+                <a href="ABOUT.html">About Us</a>
+                <a href="RECENSIONS.html">Ratings</a>
+            </div>
+        </div>
+        <div class="middle">
+            <div class="work">
+                <a href="LOCATE.html">Location</a>
+                <a href="CALENDAR.html">Calendar</a>
+                <a href="APPOINTMENT.html">Appointments</a>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="fun">
+                <a href="LEARN.html">Learn</a>
+                <a href="VIEW_3D.html">Watch</a>
+            </div>
+            <div class="socials">
+                <i class="bi bi-facebook"></i>
+                <i class="bi bi-tiktok"></i>
+                <i class="bi bi-whatsapp"></i>
+            </div>  
+        </div>
+    </div>
+   
+    <div class="main" id="reviews">
+        <div class="rec">
+            <p class="of5">Excellent 😃</p>
+            <p class="thetext">The staff was incredibly kind, and the dentist made me feel so comfortable. My teeth have never looked better!</p>
+        </div>
+        <div class="rec">
+            <p class="of5">Good 🙂</p>
+            <p class="thetext">Great dental care and friendly staff! Just wish the wait time was a little shorter.</p>
+        </div>
+        <div class="rec">
+            <p class="of5">Excellent 😃</p>
+            <p class="thetext">Best dental experience ever! Painless, professional, and super clean office. Highly recommend to everyone!</p>
+        </div>
+        <div class="rec">
+            <p class="of5">Excellent 😃</p>
+            <p class="thetext">Fantastic service! The dentist explained everything clearly, and my smile looks amazing. I actually enjoy coming here!</p>
+        </div>
+        <div class="rec">
+            <p class="of5">Good 🙂</p>
+            <p class="thetext">Very professional and thorough cleaning. A bit pricey, but worth it for the quality of care.</p>
+        </div>
+        <div class="rec">
+            <p class="of5">Okay 😐</p>
+            <p class="thetext">Decent experience, but the receptionist was a bit rude. The dental work itself was fine, though.</p>
+        </div>
+    </div>
+
+    <div class="planetext">
+        <p>Have you visited our office?</p>
+        <p>We'd love to hear about your experience! Share your thoughts and help others know what to expect. Your feedback is important to us and can help future patients feel more confident in their choice. Let us know how we did!</p>
+    </div>
+    <div class="inputall">
+        <form id="reviewForm">
+            <div class="radio-group">
+                <label><input type="radio" name="rating" value="1"> Very Bad 😡</label><br>
+                <label><input type="radio" name="rating" value="2"> Bad 😞</label><br>
+                <label><input type="radio" name="rating" value="3"> Okay 😐</label><br>
+                <label><input type="radio" name="rating" value="4"> Good 🙂</label><br>
+                <label><input type="radio" name="rating" value="5"> Excellent 😃</label>
+            </div>
+            <textarea id="reviewText" placeholder="Write your review here..."></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("reviewForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let ratingValue = document.querySelector('input[name="rating"]:checked');
+            if (!ratingValue) {
+                alert("Please select a rating!");
+                return;
+            }
+
+            let ratingText = ratingValue.nextSibling.textContent.trim();
+            let reviewText = document.getElementById("reviewText").value.trim();
+            if (!reviewText) {
+                alert("Please enter a review!");
+                return;
+            }
+
+            let newReview = document.createElement("div");
+            newReview.classList.add("rec", "fall");
+            newReview.innerHTML = `
+                <p class="of5">${ratingText}</p>
+                <p class="thetext">${reviewText}</p>
+            `;
+
+            let reviewsContainer = document.getElementById("reviews");
+            reviewsContainer.insertBefore(newReview, reviewsContainer.firstChild);
+
+
+            document.getElementById("reviewForm").reset();
+        });
+    </script>
+    <script src="func.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

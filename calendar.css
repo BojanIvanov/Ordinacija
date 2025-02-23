@@ -1,0 +1,225 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #b7f5ebc2;
+    position: relative;
+    font-size: 1.2vw;
+    font-family: sans-serif;
+}
+.calendar-container {
+    width: 70%;
+    height: 82vh;
+    background: white;
+    border-radius: 10px;
+    padding: 3%;
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.155);
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.month-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 1px;
+    flex-grow: 1;
+
+}
+.day, .empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5%;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    height: 9dvb;
+    width: 96%;
+    aspect-ratio: 1;
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.047);
+    overflow-y: auto; /* Enables vertical scrolling */
+            overflow-x: hidden;
+            white-space: nowrap;
+            scrollbar-width: none; /* Hide scrollbar in Firefox */
+            -ms-overflow-style: none; /* Hide scrollbar in IE/Edge */
+    
+}
+.scrollable-box::-webkit-scrollbar {
+    display: none;
+}
+.day:hover {
+    background: #e3f2fd;
+}
+.noted {
+    background: rgba(55, 85, 112, 0.27) !important;
+    border: 2px solid rgb(39, 47, 78);
+    border-radius: 10px;
+}
+.note-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 30dvh;
+    background: white;
+    padding: 2%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    display: none;
+    border-radius: 10px;
+}
+.note-box p{
+    text-align: center;
+    font-size: 2vw;
+}
+.note-box input{
+    width: 70%;
+    height: 10dvh;
+    position: absolute;
+    bottom: 12%;
+    font-size: 1.5vw;
+    padding: 5%;
+    outline: none;
+    border: 1px solid rgb(47, 56, 102);
+    border-radius: 10px;
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.108);
+}
+.note:focus{
+    outline: none;
+    background-color: rgb(220, 219, 245);
+    color: rgb(48, 51, 88);
+    font-weight: bold;
+
+}
+.note::placeholder{
+    font-size: 1.5vw;
+    color: rgb(78, 109, 137);
+    font-weight: bold;
+    opacity: 50%;
+}
+.note-box button{
+    position: absolute;
+    width: 20%;
+    height: 10dvh;
+    bottom: 12%;
+    right: 4%;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(55, 85, 112);
+    color: white;
+    font-size: 1.5vw;
+}
+.note-box button:hover{
+    background-color: rgb(37, 59, 80);
+    cursor: pointer;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 999;
+}
+.move{
+    background-color: rgb(55, 85, 112);
+    border: none;
+    width: 6%;
+    height: 7dvh;
+    font-size: 1.5vw;
+    color: white;
+    font-weight: bold;
+    padding: 1%;
+    border-radius: 10px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.407);
+    transition: 0.2s;
+}
+.move:hover{
+    background-color: rgb(31, 52, 72);
+    cursor: pointer;
+}
+.refresh-button{
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    background-color: rgb(55, 85, 112);
+    border: none;
+    width: 10%;
+    height: 7dvh;
+    font-size: 1vw;
+    color: white;
+    font-weight: bold;
+    padding: 1%;
+    border-radius: 10px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.407);
+    transition: 0.2s;
+}
+.refresh-button:hover{
+    background-color: rgb(37, 59, 80);
+    cursor: pointer;
+    outline: 6px solid rgb(46, 68, 88);
+    border: 2px solid white;
+}
+.over {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.popup {
+    background: rgb(217, 216, 226);
+    padding: 3% 2%;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 40%;
+    height: auto;
+}
+
+.popup p {
+    margin-bottom: 15px;
+    font-size: 1.5vw;
+}
+
+.close-btn {
+    background: #27486c;
+    color: white;
+    border: none;
+    padding: 2% 5%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.5vw;
+}
+
+.close-btn:hover {
+    background: #1a3149;
+    transition: 0.2s;
+    color: #b7c4d2;
+}
+
+.hidden {
+    display: none;
+}

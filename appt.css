@@ -1,0 +1,104 @@
+body{
+    font-family: sans-serif;
+    background-color: rgb(78, 109, 137);
+}
+.back{
+    height: 100dvh;
+    margin: auto;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 0 0 40px 20px rgba(0, 0, 0, 0.403);
+}
+.main{
+    position: absolute;
+    height: 100dvh;
+    width: 90%;
+    margin-left: 8%;
+}
+.text{
+    width: 50%;
+    font-size: 1.6vw;
+    padding: 5%;
+    padding-left: 2%;
+    line-height: 150%;
+    color: rgb(88, 123, 154);
+}
+.text h1{
+    font-size: 3vw;
+    font-weight: bold;
+    color: rgb(55, 85, 112);
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.44);
+}
+.inputs{
+    width: 48%;
+    margin: auto;
+}
+.backinp{
+    width: 90%;
+    height: 92dvh;
+    margin: auto;
+    background-color: rgb(227, 239, 245);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 5%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px -2px rgba(0, 0, 0, 0.825) inset;
+}
+.in{
+    border: none;
+    border-radius: 10px;
+    height: 12dvh;
+    padding: 5%;
+    color: rgb(78, 109, 137);
+    background-color: rgba(78, 109, 137, 0.318);
+    font-weight: bold;
+    font-size: 2vw;
+}
+.in:focus{
+    outline: none;
+    background-color: rgb(183, 223, 207);
+    color: rgb(105, 160, 138);
+    font-weight: bold;
+
+}
+.textin{
+    height: 70dvh;
+}
+.in::placeholder{
+    color: rgb(78, 109, 137);
+    font-weight: bold;
+    opacity: 50%;
+}
+button{
+    position: absolute;
+    bottom: 5%;
+    background-color: rgb(55, 85, 112);
+    border: none;
+    width: 12%;
+    font-size: 2vw;
+    color: white;
+    font-weight: bold;
+    padding: 1%;
+    border-radius: 10px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.407);
+    z-index: 100;
+    transition: 0.5s;
+}
+button:hover{
+    background-color: rgb(37, 59, 80);
+    cursor: pointer;
+    outline: 6px solid rgb(46, 68, 88);
+    border: 2px solid white;
+}
+#check{
+    position: absolute;
+    bottom: 5%;
+    z-index: 1; 
+    font-size: 5vw;
+    color: rgb(20, 111, 20);  
+    transition: 0.5s;
+}
